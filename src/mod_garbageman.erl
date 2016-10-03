@@ -23,10 +23,12 @@ stop(_Host) ->
   	ok.
 
 collect() ->
+	?DEBUG("Starting mod_garbageman collect", [] ),
 	[erlang:garbage_collect(P) || P <- processes()],
 	ok.
 
 collect_top_n(N) ->
+	?DEBUG("Starting mod_garbageman collect_top_n", [] ),
  	lists:sublist(
   		lists:usort(
       		fun({K1,V1},{K2,V2}) -> {V1,K1} =< {V2,K2} end,
