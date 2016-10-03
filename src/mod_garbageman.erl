@@ -1,4 +1,4 @@
--module(mod_message_truncate).
+-module(mod_garbageman).
 
 -behaviour(gen_mod).
 
